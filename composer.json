@@ -1,0 +1,54 @@
+{
+    "name": "worthcoding/activity",
+    "description": "Worthcoding/activity is activity logging package backed by Mongodb and inspired by mixpanel",
+    "keywords": [
+        "worthcoding",
+        "activity"
+    ],
+    "homepage": "https://github.com/worthcoding/activity",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "suraj jadhav",
+            "email": "surajjadhavofficial@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Worthcoding\\Activity\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Worthcoding\\Activity\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Worthcoding\\Activity\\ActivityServiceProvider"
+            ],
+            "aliases": {
+                "Activity": "Worthcoding\\Activity\\ActivityFacade"
+            }
+        }
+    }
+}
